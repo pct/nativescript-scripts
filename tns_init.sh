@@ -12,6 +12,7 @@ echo 'create project:' $PROJECT_NAME '...'
 # new
 tns create $PROJECT_NAME --ng
 cp $BASEDIR/.gitignore $PROJECT_NAME
+cp -rpf $BASEDIR/scripts $PROJECT_NAME
 
 # use coffeescript and jade
 cd $PROJECT_NAME
