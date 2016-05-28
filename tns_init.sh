@@ -6,10 +6,12 @@ if [ $# -eq 0 ]; then
 fi
 
 PROJECT_NAME=$1
+BASEDIR=$(dirname "$0")
 
-echo 'create project:' $PROJECT_NAME
+echo 'create project:' $PROJECT_NAME '...'
 # new
 tns create $PROJECT_NAME --ng
+cp $BASEDIR/.gitignore $PROJECT_NAME
 
 # use coffeescript and jade
 cd $PROJECT_NAME
@@ -18,7 +20,8 @@ tns install coffeescript
 tns install jade
 tns install sass
 
-cd -
+git init; git add .; git commit -m 'init'
+
 
 # done
-echo 'done'
+echo "\n\ndone!"
