@@ -7,6 +7,7 @@ fi
 
 PROJECT_NAME=$1
 
+echo 'create project:' $PROJECT_NAME
 # new
 tns create $PROJECT_NAME --ng
 
