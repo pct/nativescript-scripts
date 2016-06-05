@@ -13,8 +13,11 @@ echo 'create project:' $PROJECT_NAME '...'
 tns create $PROJECT_NAME --ng
 cp $BASEDIR/.gitignore $PROJECT_NAME
 cp -rpf $BASEDIR/scripts $PROJECT_NAME
-cp -rpf $BASEDIR/app/* $PROJECT_NAME
-rm -rf $PROJECT_NAME/app.com*
+cp -rpf $BASEDIR/app/* $PROJECT_NAME/app/
+
+# install route
+cd $PROJECT_NAME
+npm i @angular/router-deprecated --save
 
 # use coffeescript and jade
 cd $PROJECT_NAME

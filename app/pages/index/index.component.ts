@@ -1,11 +1,11 @@
 import {Component} from "@angular/core";
 
 @Component({
-  selector: "index",
+  selector: "Index",
   templateUrl: './pages/index/index.xml',
 })
 
-export class IndexComponent {
+export class IndexPage {
   public counter: number = 16;
 
   public get message(): string {
