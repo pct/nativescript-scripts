@@ -10,17 +10,16 @@ BASEDIR=$(dirname "$0")
 
 echo 'create project:' $PROJECT_NAME '...'
 # new
-tns create $PROJECT_NAME
+tns create $PROJECT_NAME --ng
 cp $BASEDIR/.gitignore $PROJECT_NAME
 cp -rpf $BASEDIR/scripts $PROJECT_NAME
-cp -rpf $BASEDIR/app/* $PROJECT_NAME/app/
+cp -rpf $BASEDIR/app_ng/* $PROJECT_NAME/app/
 
 # use coffeescript and jade
 cd $PROJECT_NAME
 tns platform add ios
 tns install jade
 tns install sass
-tns install coffeescript
 
 git init; git add .; git commit -m 'init'
 
