@@ -12,7 +12,7 @@ BASEDIR=$(dirname "$0")
 echo 'create project:' $PROJECT_NAME '...'
 tns create $PROJECT_NAME
 # clean
-cd $PROJECT_NAME
+cd $PROJECT_NAME/app/
 rm -rf *.js *.css *.xml
 cd -
 
