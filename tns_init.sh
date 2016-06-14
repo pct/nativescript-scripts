@@ -8,9 +8,15 @@ fi
 PROJECT_NAME=$1
 BASEDIR=$(dirname "$0")
 
+# new project
 echo 'create project:' $PROJECT_NAME '...'
-# new
 tns create $PROJECT_NAME
+# clean
+cd $PROJECT_NAME
+rm -rf *.js *.css *.xml
+cd -
+
+# copy
 cp $BASEDIR/.gitignore $PROJECT_NAME
 cp -rpf $BASEDIR/scripts $PROJECT_NAME
 cp -rpf $BASEDIR/app/* $PROJECT_NAME/app/
