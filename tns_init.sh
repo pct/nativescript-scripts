@@ -8,26 +8,25 @@ fi
 PROJECT_NAME=$1
 BASEDIR=$(dirname "$0")
 
+npm install -g @vue/cli @vue/cli-init
+
 # new project
 echo 'create project:' $PROJECT_NAME '...'
-tns create $PROJECT_NAME
+vue init nativescript-vue/vue-cli-template $PROJECT_NAME
 # clean
-cd $PROJECT_NAME/app/
-rm -rf *.js *.css *.xml
-cd -
+cd $PROJECT_NAME
+yarn install
 
 # copy
 cp $BASEDIR/.gitignore $PROJECT_NAME
 cp -rpf $BASEDIR/scripts $PROJECT_NAME
-cp -rpf $BASEDIR/app/* $PROJECT_NAME/app/
+#cp -rpf $BASEDIR/app/* $PROJECT_NAME/app/
 
 # use coffeescript and jade
-cd $PROJECT_NAME
-tns platform add ios
-tns install jade
-tns install sass
-tns install coffeescript
-
+#tns platform add ios
+#tns install jade
+#tns install sass
+#
 git init; git add .; git commit -m 'init'
 
 
